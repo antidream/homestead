@@ -1,12 +1,6 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-</head>
-<body>
-<?php include "menu.php" ?>
-<div><h3>Отказ российских артистов выступать в Белоруссии</h3></div><h3>
-</body>
-</html>
+<?php include "menu.php";?>
+<h1>Новости</h1>
+<?php foreach ($news as $item): ?>
+    <a href="<?=route('NewsOne', $item['id'])?>"><?=$item['title']?></a><br>
+<?php endforeach; ?>
 

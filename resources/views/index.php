@@ -1,11 +1,2 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-</head>
-<body>
-    <?php include "menu.php" ?>
-    <div>Привет!</div>
-</body>
-</html>
+<?php include "menu.php"?>
+<h1>Добро пожаловать!</h1>

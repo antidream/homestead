@@ -10,17 +10,29 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+/*
+Route::get('/', [
+    'uses' => 'HomeController@index',
+    'as' = 'Home'
+    ]);
+*/
 
-$a = 1;
+Route::get('/', 'HomeController@index')->name('Home');
 
-Route::get('/', function () {
-    return view("index");
+
+Route::group([
+    'prefix' => 'admin',
+    'namespace'=> 'Admin',
+    'as' => 'admin.'
+], function () {
+    Route::get('/', 'IndexController@index')->name('index');
+    Route::get('/test1', 'IndexController@test1')->name('test1');
+    Route::get('/test2', 'IndexController@test2')->name('test2');
 });
 
-Route::get('/about', function () {
-    return view("about");
-});
 
-Route::get('/news', function () {
-    return view("news");
-});
+
+Route::get('/news', 'NewsController@index')->name('News');
+Route::get('/news/{id}', 'NewsController@show')->name('NewsOne');
+Route::get('/category','CategoryController@index')->name('Category');
+Route::get('/category/{categoryPath}', 'CategoryController@CategoryGetNews')->name('CategoryNews');
