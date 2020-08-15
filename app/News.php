@@ -42,12 +42,12 @@ class News
     public static function getNewsByCategoryName($name) {
         $id = Category::getCategoryIdByName($name);
         $news = [];
-            foreach (static::$news as $item) {
-                if ($item['category'] == $id) {
-                    $news[] = $item;
-                }
+        foreach (static::$news as $item) {
+            if ($item['category'] == $id) {
+                $news[] = $item;
             }
-            return $news;
+        }
+        return $news;
     }
 
 
