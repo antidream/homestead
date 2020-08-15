@@ -2,33 +2,38 @@
 
 namespace App;
 
+
 class Category
 {
-    private static $category = [
-        [
-            'categoryId' => 1,
-            'categoryName' => 'Спорт',
-            'categoryPath' => 'Sport'
+    private static $categories = [
+        1 => [
+            'id' => 1,
+            'title' => 'Спорт',
+            'slug' => 'sport'
         ],
-        [
-            'categoryId' => 2,
-            'categoryName' => 'Финансы',
-            'categoryPath' => 'Finance'
-        ]
+        2 => [
+            'id' => 2,
+            'title' => 'Политика',
+            'slug' => 'politics'
+        ],
     ];
 
-    public static function getCategory() {
-        return static::$category;
+    public static function getCategories() {
+        return static::$categories;
     }
 
-    public static function getCategoryIdByName($path) {
+    public static function getCategoryIdByName($name) {
         $id = null;
-        foreach (static::$category as $category) {
-            if($path == $category['categoryPath']) {
-                $id = $category['categoryId'];
+        foreach (static::$categories as $category) {
+            if ($category['slug'] == $name) {
+                $id = $category['id'];
                 break;
             }
         }
         return $id;
+    }
+
+    public static function getCategoryById($id) {
+        return static::$categories[$id];
     }
 }

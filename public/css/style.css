@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Orienta&family=Ultra&display=swap">);
+
+.navbar-nav a {
+    padding: 5px;
+    text-decoration: none;
+    color: #1b1e21;
+}
+.py-4 {
+    padding: 0px 400px;
+}
+.mainH1 {
+    text-align: center;
+    margin: 1em 0 0.5em 0;
+    color: #343434;
+    font-family: 'Ultra', sans-serif;
+    font-size: 36px;
+    line-height: 42px;
+    text-transform: uppercase;
+    text-shadow: 0 2px white, 0 3px #777;
+}
+.newsH1 {
+    text-align: center;
+    margin: 1em 0 0.5em 0;
+    color: #4e555b;
+    font-family: 'Orienta', sans-serif;
+    font-size: 50px;
+    line-height: 40px;
+}
+.newsH2 {
+    margin: 1em 0 0.5em 0;
+    color: #343434;
+    font-family: 'Orienta', sans-serif;
+}
+.py-4 a {
+    text-decoration: none;
+    color: #1b1e21;
+}

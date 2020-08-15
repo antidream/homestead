@@ -16,13 +16,12 @@ Route::get('/', [
     'as' = 'Home'
     ]);
 */
-
 Route::get('/', 'HomeController@index')->name('Home');
 
 
 Route::group([
     'prefix' => 'admin',
-    'namespace'=> 'Admin',
+    'namespace' => 'Admin',
     'as' => 'admin.'
 ], function () {
     Route::get('/', 'IndexController@index')->name('index');
@@ -30,9 +29,22 @@ Route::group([
     Route::get('/test2', 'IndexController@test2')->name('test2');
 });
 
+Route::group([
+    'prefix' => 'news',
+    'as' => 'news.'
+], function () {
+    Route::get('/', 'NewsController@index')->name('index');
+    Route::get('/one/{id}', 'NewsController@show')->name('show');
 
+    Route::group([
+        'as' => 'category.'
+    ], function () {
+        Route::get('/categories', 'CategoryController@index')->name('index');
+        Route::get('/category/{name}', 'CategoryController@show')->name('show');
+    });
+});
 
-Route::get('/news', 'NewsController@index')->name('News');
-Route::get('/news/{id}', 'NewsController@show')->name('NewsOne');
-Route::get('/category','CategoryController@index')->name('Category');
-Route::get('/category/{categoryPath}', 'CategoryController@CategoryGetNews')->name('CategoryNews');
+Route::view('/vue', 'vue')->name('vue');
+
+Auth::routes();
+
