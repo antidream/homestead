@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
 use App\News;
 use Illuminate\Http\Request;
 
 class NewsController extends Controller
 {
     public function index() {
-        return view('news')->with('news', News::getNews());
+        return view('news.index')->with('news', News::getNews());
     }
 
     public function show($id) {
-        return view('newsOne')->with('news', News::getNewsId($id));
+            return view('news.One')->with('news', News::getNewsId($id));
     }
+
 }
